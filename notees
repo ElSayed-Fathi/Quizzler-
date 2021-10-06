@@ -1,0 +1,69 @@
+// true button
+ setState(() {
+                  scoreKeeper.add(Icon(Icons.check, color: Colors.green,),
+                  );
+                });
+// false button
+ setState(() {
+                  scoreKeeper.add(
+                    Icon(Icons.close, color: Colors.red,),
+                  );
+                });
+
+// list items
+   SizedBox(
+      width: 20,
+    ),
+    Icon(
+      Icons.check ,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+//==================================================================================================
+  // // list of questions
+  // List<String> questions = [
+  //   'You can lead a cow down stairs but not up stairs.',
+  //   'Approximately one quarter of human bones are in the feet.',
+  //   'A slug\'s blood is green.'
+  // ];
+  //
+  // // list of answers
+  // List<bool> answers = [false, true, true];
+  //
+  // // creat object from Question Class
+  // Question q1 = Question(q:'You can lead a cow down stairs but not up stairs.',a: false );
+  //================================================================================================
+    // creat list of objects from Question class
+    List<Question> questionBank = [
+      Question(q:'You can lead a cow down stairs but not up stairs.',a: false ),
+      Question(q: 'Approximately one quarter of human bones are in the feet.',a: true),
+      Question(q:'A slug\'s blood is green.',a: false ),
+    ];
+
+    //==============================================================================================
+      bool correctAnswer = quizBrain.getCorrectAnswer();
+
+                    if(correctAnswer == false){
+                      print('user is correct');
+                    }else{
+                      print('user is wrong');
+                    }
+                    setState(() {
+                      quizBrain.nextQuestion();
+                    });
+                    // print(questionNumber);
